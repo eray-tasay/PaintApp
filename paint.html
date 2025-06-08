@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paint</title>
+    <link rel="stylesheet" href="paint.css">
+    <script defer src="paint.js"></script>
+    <script type="module" src="auto-resizable-text-area.js"></script>
+</head>
+<body>
+    <div class="paint">
+        <div class="palette">
+            <div class="tools-container">
+                <h3>Tools</h3>
+                <div class="tools">
+                    <div class="tool selectable pencil active" data-tool="pencil">
+                        <img src="icons/pencil-solid.svg" alt="pencil icon" width="32" height="32">
+                    </div>
+                    <div class="tool selectable eraser" data-tool="eraser">
+                        <img src="icons/eraser-solid.svg" alt="eraser icon" width="34" height="34">
+                    </div>
+                    <div class="tool selectable text" data-tool="text">
+                        <img src="icons/a-solid.svg" alt="A" width="30" height="30">
+                    </div>
+                    <div class="tool selectable select" data-tool="select">
+                        <img src="icons/square-regular.svg" alt="square" width="32" height="32">
+                    </div>
+                    <div class="tool stroke-width" data-tool="stroke_width">
+                        <img src="icons/arrows-up-down-solid.svg" alt="arrow up down" width="29" height="29">
+                        <ul class="lines" style="display: none;">
+                            <li class="container active" data-width="1" title="1px">
+                                <div class="line" style="border-top-width: 1px"></div>
+                            </li>
+                            <li class="container" data-width="2" title="2px">
+                                <div class="line" style="border-top-width: 2px"></div>
+                            </li>
+                            <li class="container" data-width="3" title="3px">
+                                <div class="line" style="border-top-width: 3px"></div>
+                            </li>
+                            <li class="container" data-width="4" title="4px">
+                                <div class="line" style="border-top-width: 4px"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tool clear">
+                        <img src="icons/x-solid.svg" alt="X" width="28" height="28">
+                    </div>
+                    <div class="tool file">
+                        <img src="icons/file-solid.svg" alt="file icon" width="28" height="28">
+                        <ul class="file-format-list" style="display: none;">
+                            <li data-image-type="png">png</li>
+                            <li data-image-type="jpeg">jpeg</li>
+                            <li data-image-type="webp">webp</li>
+                            <li data-image-type="bmp">bmp</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shapes-container">
+                <h3>Shapes</h3>
+                <div class="shapes">
+                    <svg viewBox="0 0 64 64" class="shape ellipse">
+                        <circle cx="32" cy="32" r="30" stroke="black" fill="rgba(0, 214, 255, 0.5)"/>
+                    </svg>
+                    <svg viewBox="0 0 64 64" class="shape rect">
+                        <rect x="2" y="2" width="60" height="60" stroke="black" fill="rgba(0, 214, 255, 0.5)"/>
+                    </svg>
+                    <svg viewBox="0 0 64 64" class="shape line">
+                        <line x1="2" y1="62" x2="62" y2="2" stroke="black"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="color-palette-container">
+                <h3>Colors</h3>
+                <div class="color-palette">
+                    <div class="colors">
+                        <div class="color black active"></div>
+                        <div class="color white"></div>
+                        <div class="color red"></div>
+                        <div class="color green"></div>
+                        <div class="color blue"></div>
+                        <div class="color purple"></div>
+                        <div class="color brown"></div>
+                        <div class="color orange"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                        <div class="color white"></div>
+                    </div>
+                    <div class="color-selector">
+                        <input type="color">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas></canvas>
+            <div class="select-rect"></div>
+            <div class="write-text-container">
+                <auto-resizable-textarea></auto-resizable-textarea>
+                <button class="resize-btn"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
